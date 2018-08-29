@@ -4,8 +4,16 @@ import java.util.Random;
 
 public interface Playable {
 
+
+    //
     static final int DICE_RANDOM_RANGE = 11;
 
+
+
+    default void countAnimalsFromDiceResult(DiceThrowResult diceThrowResult) {
+
+
+    }
 
     default DiceThrowResult throwDices() {
 
@@ -16,119 +24,116 @@ public interface Playable {
         //Poniżej instrukcja switch symulująca rzut kostki czerwonej o opisanym poniżej rozkładzie pól.
         //Kostka czerwona : lis, koń, 2 świnie, 2 owce, 6 królików.
 
-        switch (r.nextInt()) {
+        switch (r.nextInt(DICE_RANDOM_RANGE)) {
 
             case 0: {
-                diceThrowResult.setRedField("Wolf");
+                diceThrowResult.setRedField("fox");
                 break;
             }
             case 1: {
-                diceThrowResult.setRedField("Wolf");
+                diceThrowResult.setRedField("horse");
                 break;
             }
             case 2: {
-                diceThrowResult.setRedField("Wolf");
+                diceThrowResult.setRedField("pig");
                 break;
             }
             case 3: {
-                diceThrowResult.setRedField("Wolf");
+                diceThrowResult.setRedField("pig");
                 break;
 
             }
             case 4: {
-                diceThrowResult.setRedField("Wolf");
+                diceThrowResult.setRedField("sheep");
                 break;
             }
             case 5: {
-                diceThrowResult.setRedField("Wolf");
+                diceThrowResult.setRedField("sheep");
                 break;
             }
             case 6: {
-                diceThrowResult.setRedField("Wolf");
+                diceThrowResult.setRedField("rabbit");
                 break;
             }
             case 7: {
-                diceThrowResult.setRedField("Wolf");
+                diceThrowResult.setRedField("rabbit");
                 break;
             }
             case 8: {
-                diceThrowResult.setRedField("Wolf");
+                diceThrowResult.setRedField("rabbit");
                 break;
             }
             case 9: {
-                diceThrowResult.setRedField("Wolf");
+                diceThrowResult.setRedField("rabbit");
                 break;
             }
             case 10: {
-                diceThrowResult.setRedField("Wolf");
+                diceThrowResult.setRedField("rabbit");
                 break;
             }
             case 11: {
-                diceThrowResult.setRedField("Wolf");
+                diceThrowResult.setRedField("rabbit");
                 break;
             }
             default: {
                 diceThrowResult.setRedField("DEFAULT RED VALUE");
                 break;
             }
-
-
         }
-
 
 
         //Poniżej instrukcja switch symulująca rzut kostki zielonej o opisanym poniżej rozkładzie pól.
         //Kostka zielona : wilk, krowa, świnia, 3 owce, 6 królików.
 
-        switch (r.nextInt()) {
+        switch (r.nextInt(DICE_RANDOM_RANGE)) {
 
             case 0: {
-                diceThrowResult.setGreenField("Green ");
+                diceThrowResult.setGreenField("wolf");
                 break;
             }
             case 1: {
-                diceThrowResult.setGreenField("Green Wolf");
+                diceThrowResult.setGreenField("cow");
                 break;
             }
             case 2: {
-                diceThrowResult.setGreenField("Green Wolf");
+                diceThrowResult.setGreenField("pig");
                 break;
             }
             case 3: {
-                diceThrowResult.setGreenField("Green Wolf");
+                diceThrowResult.setGreenField("sheep");
                 break;
 
             }
             case 4: {
-                diceThrowResult.setGreenField("Green Wolf");
+                diceThrowResult.setGreenField("sheep");
                 break;
             }
             case 5: {
-                diceThrowResult.setGreenField("Green Wolf");
+                diceThrowResult.setGreenField("sheep");
                 break;
             }
             case 6: {
-                diceThrowResult.setGreenField("Green Wolf");
+                diceThrowResult.setGreenField("rabbit");
                 break;
             }
             case 7: {
-                diceThrowResult.setGreenField("Green Wolf");
+                diceThrowResult.setGreenField("rabbit");
                 break;
             }
             case 8: {
-                diceThrowResult.setGreenField("Green Wolf");
+                diceThrowResult.setGreenField("rabbit");
                 break;
             }
             case 9: {
-                diceThrowResult.setGreenField("Green Wolf");
+                diceThrowResult.setGreenField("rabbit");
                 break;
             }
             case 10: {
-                diceThrowResult.setGreenField("Green Wolf");
+                diceThrowResult.setGreenField("rabbit");
                 break;
             }
             case 11: {
-                diceThrowResult.setGreenField("Green Wolf");
+                diceThrowResult.setGreenField("rabbit");
                 break;
             }
             default: {
@@ -143,7 +148,15 @@ public interface Playable {
 
     }
 
-    ;
+
+    public void countDiceResultsOnFarm(DiceThrowResult diceThrowResult);
+
+
+
+
+
+
+
 
 }
 

@@ -4,6 +4,7 @@ package pl.superfarmer.game.superfarmer.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import pl.superfarmer.game.superfarmer.domain.DiceThrowResult;
 import pl.superfarmer.game.superfarmer.domain.Farm;
 
@@ -19,13 +20,15 @@ public class SuperFarmerController {
 
     }
 
+    @ResponseBody
     @GetMapping("/throwDices")
-    public String diceResult(Model model) {
+    public DiceThrowResult diceResult(Model model) {
         Farm f = new Farm();
         DiceThrowResult diceThrowResult = f.throwDices();
-       model.addAttribute("diceResult", diceThrowResult);
+
+        model.addAttribute("diceResult", diceThrowResult);
 
 
-        return "throwDices";
+        return diceThrowResult;
     }
 }

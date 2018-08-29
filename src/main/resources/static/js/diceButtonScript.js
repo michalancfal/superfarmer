@@ -1,0 +1,4 @@
+
+function diceThrowJs() {
+    alert("DZIAŁAJU !");
+};
